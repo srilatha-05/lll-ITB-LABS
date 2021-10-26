@@ -1,1 +1,25 @@
+#include<stdio.h>
+int main()
+{
+    int nums[100],i,j,size,target,sum=0;
+    printf("enter the size of the array");
+    scanf("%d",&size);
+    printf("enter array elements");
+    for(i=0;i<size;i++){
+        scanf("%d",&nums[i]);
+    }
+    printf("enter tha value of target");
+    scanf("%d",&target);
+    for(i=0;i<size;i++){
+        for(j=0;j<size;j++){
+            sum=nums[i]+nums[j];
+            if(sum == target)
+            {
+                printf("outpout: [%d %d]",i,j);
+            }
+        }
+    }
+}
 
+
+}
