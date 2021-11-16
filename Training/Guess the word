@@ -1,0 +1,14 @@
+class Solution:
+    def overlap(self, w1, w2):
+        return len([None for c1,c2 in zip(w1,w2) if c1==c2])
+   
+    def reduce(self, ws, base, i):
+        return [w for w in ws if self.overlap(w, base) == i]
+   
+    def findSecretWord(self, wordlist: List[str], master: 'Master') -> None:
+        for _ in range(10):
+            word = wordlist[len(wordlist)//2]
+            i = master.guess(word)
+            if i == 6:
+                return
+            wordlist = self.reduce(wordlist, word, i)
